@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class ZeroRemainderPairs {
 	
+	/* Check if an array can be divided into pairs whose sum is divisible by k */
+    /* https://www.geeksforgeeks.org/check-if-an-array-can-be-divided-into-pairs-whose-sum-is-divisible-by-k/ */
 	private static boolean findPairs(int arr[], int k, int n) {
 		int len = n;
 		if (len % 2 == 1) return false;
