@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Stack;
 import java.util.Vector;
 
-public class Test {
+public class ListInterface {
 	public static void main(String[] args) {
 		List<Integer> l1= new ArrayList<Integer>();
 		Vector<Integer> l2= new Vector<Integer>();
@@ -44,7 +44,7 @@ public class Test {
 		 * Stack implementation
 		 */
 		System.out.println("****** Stack implementation *******");
-		l3.push("Ishan");
+		l3.push("Amit");
 		l3.push("Abhinav");
 		l3.add("Kartikeya");
 		l3.add("Aman");
@@ -60,6 +60,7 @@ public class Test {
 		l4.addFirst("Samrat");
 		l4.addLast("Ganesh CTO");
 		l4.add(2, "Ganesh CEO");
+		l4.add("Mahender");
 		while(!l4.isEmpty()) {
 			System.out.println("Remove: " + l4.remove());
 			System.out.println("Remove First: "+ l4.removeFirst());

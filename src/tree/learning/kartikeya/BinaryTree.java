@@ -1,7 +1,11 @@
 package tree.learning.kartikeya;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Queue;
+import java.util.TreeMap;
 
 public class BinaryTree {
 	
@@ -51,5 +55,68 @@ public class BinaryTree {
 			if (curr.right!=null)
 				queue.add(curr.right);
 		}
+	}
+	
+	public void topView(Node node) {
+		class QueueObj{
+			Node node;
+			int level;
+			QueueObj(Node node, int level){
+				this.node = node;
+				this.level = level;
+			}
+		}
+		Queue<QueueObj> q = new LinkedList<QueueObj>();
+		Map<Integer, Node> map = new TreeMap<Integer, Node>(); 
+		QueueObj n = new QueueObj(node, 0);
+		q.add(n);
+		
+		while (!q.isEmpty()) { 
+            QueueObj tmpNode = q.poll(); 
+            if (!map.containsKey(tmpNode.level)) { 
+                map.put(tmpNode.level, tmpNode.node); 
+            } 
+  
+            if (tmpNode.node.left != null) { 
+                q.add(new QueueObj(tmpNode.node.left, tmpNode.level - 1)); 
+            } 
+            if (tmpNode.node.right != null) { 
+                q.add(new QueueObj(tmpNode.node.right, tmpNode.level + 1)); 
+            } 
+  
+        } 
+        for (Entry<Integer, Node> entry : map.entrySet()) { 
+            System.out.print(entry.getValue().value); 
+        } 
+	}
+	
+	public void bottomView(Node node) {
+		class QueueObj{
+			Node node;
+			int level;
+			QueueObj(Node node, int level){
+				this.node = node;
+				this.level = level;
+			}
+		}
+		Queue<QueueObj> q = new LinkedList<QueueObj>();
+		Map<Integer, Node> map = new TreeMap<Integer, Node>(); 
+		QueueObj n = new QueueObj(node, 0);
+		q.add(n);
+		
+		while (!q.isEmpty()) { 
+            QueueObj tmpNode = q.poll(); 
+            map.put(tmpNode.level, tmpNode.node);
+            if (tmpNode.node.left != null) { 
+                q.add(new QueueObj(tmpNode.node.left, tmpNode.level - 1)); 
+            } 
+            if (tmpNode.node.right != null) { 
+                q.add(new QueueObj(tmpNode.node.right, tmpNode.level + 1)); 
+            } 
+  
+        } 
+        for (Entry<Integer, Node> entry : map.entrySet()) { 
+            System.out.print(entry.getValue().value); 
+        }
 	}
 }
