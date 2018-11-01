@@ -58,14 +58,10 @@ public class BinaryTree {
 	}
 	
 	public void topView(Node node) {
-		class QueueObj{
-			Node node;
-			int level;
-			QueueObj(Node node, int level){
-				this.node = node;
-				this.level = level;
-			}
-		}
+		
+		if (node == null)
+			return ;
+		
 		Queue<QueueObj> q = new LinkedList<QueueObj>();
 		Map<Integer, Node> map = new TreeMap<Integer, Node>(); 
 		QueueObj n = new QueueObj(node, 0);
@@ -90,17 +86,13 @@ public class BinaryTree {
         } 
 	}
 	
-	public void bottomView(Node node) {
-		class QueueObj{
-			Node node;
-			int level;
-			QueueObj(Node node, int level){
-				this.node = node;
-				this.level = level;
-			}
-		}
+	public void bottomView(Node node) { 
+		
+		if (node == null)
+			return ;
+		
 		Queue<QueueObj> q = new LinkedList<QueueObj>();
-		Map<Integer, Node> map = new TreeMap<Integer, Node>(); 
+		Map<Integer, Node> map = new TreeMap<Integer, Node>();
 		QueueObj n = new QueueObj(node, 0);
 		q.add(n);
 		
@@ -118,5 +110,15 @@ public class BinaryTree {
         for (Entry<Integer, Node> entry : map.entrySet()) { 
             System.out.print(entry.getValue().value); 
         }
+	}
+	
+	public void rightView(Node node) {
+		if (node == null)
+			return ;
+	}
+	
+	public void leftView(Node node) {
+		if (node == null)
+			return ;
 	}
 }
