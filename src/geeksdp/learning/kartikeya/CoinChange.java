@@ -25,6 +25,7 @@ public class CoinChange {
 		}
 		
 		System.out.println("coins used for minimum count : ");
+		
 		int index = amount;
 		while(coinUsedIndex[index] != -1) {
 			System.out.println(coins[coinUsedIndex[index]]);
@@ -50,6 +51,6 @@ public class CoinChange {
 			coins[i] = sc.nextInt(); 
 		}
 		int amount = sc.nextInt();
-		System.out.println("min coins used : " +minimumCoins(coins, totalCoins, amount));
+		System.out.println("min coins used : " + minimumCoins(coins, totalCoins, amount));
 	}
 }
