@@ -67,5 +67,9 @@ public class ListInterface {
 			System.out.println("Get Last: " + l4.getLast() +" & Get First: " +l4.getFirst());
 			l4.clear();
 		}
+		
+		long x = 1000000000;
+		long p = (x % (x+7) * x % (x+7)) % (x+7);
+		System.out.println(p);
 	}
 }
